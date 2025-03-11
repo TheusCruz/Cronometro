@@ -36,16 +36,16 @@ const criaHoraDosSegundos = (segundos) => {
     })
 }
 
-const iniciarRelogio = () => {
+const iniciarcronometro = () => {
     timer = setInterval(function() {
         segundos++;
-        relogio.innerHTML = criaHoraDosSegundos(segundos);
+        cronometro.innerHTML = criaHoraDosSegundos(segundos);
     }, 1000);
 }
 
 buttonIniciar.addEventListener('click', function(event) {
     clearInterval(timer)
-    iniciarRelogio();
+    iniciarcronometro();
 });
 
 buttonParar.addEventListener('click', function(event) {
@@ -54,6 +54,6 @@ buttonParar.addEventListener('click', function(event) {
 
 buttonZerar.addEventListener('click', function(event) {
     clearInterval(timer);
-    relogio.innerHTML = '00:00:00';
+    cronometro.innerHTML = '00:00:00';
     segundos = 0
 });
